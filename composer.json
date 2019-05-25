@@ -1,0 +1,13 @@
+{
+    "name": "phpmaster/console_demo",
+    "description": "creating console application",
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/console": "3.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    }
+}

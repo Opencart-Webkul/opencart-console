@@ -1,0 +1,17 @@
+<?php
+class ControllerExtensionModule-consolefilename extends Controller {
+
+    public function index() {
+        $data = array();
+        $data = array_merge($data, $this->load->language('extension/module/consolefilename'));
+
+        if (isset($this->error['warning'])) {
+            $data['error_warning'] = $this->error['warning'];
+        } else {
+            $data['error_warning'] = '';
+        }
+        
+        return $this->load->view('extension/module/consolefilename', $data);
+    }
+
+}

@@ -1,0 +1,44 @@
+#!/usr/bin/env php
+<?php
+
+// set_time_limit(0);
+// date_default_timezone_set('America/Los_Angeles'); 
+
+// include the composer autoloader
+require_once __DIR__ . '/../vendor/autoload.php'; 
+
+// import the Symfony Console Application 
+use Generation\Commands\CommandInterface;
+use Symfony\Component\Console\Application; 
+use Symfony\Component\Console\Command\Command;
+
+$app = new Application();
+
+$reflection = new ReflectionClass(CommandInterface::class);
+
+$pathToCommandsDir = substr($reflection->getFileName(), 0, strrpos($reflection->getFileName(), '/'));
+
+$collection = array_filter(scandir($pathToCommandsDir), function($path) use ($pathToCommandsDir) {
+    if (($path != '.' || $path != '..') && is_file($pathToCommandsDir . "/" . $path) && !is_dir(is_file($pathToCommandsDir . "/" . $path))) {
+        return true;
+    }
+
+    return false;
+});
+
+foreach ($collection as $className) {
+    $classPath = $reflection->getNamespaceName() . "\\" . substr($className, 0, strpos($className, '.'));
+    $reflectionClass = new ReflectionClass($classPath);
+
+    if ($reflectionClass->isInterface() || $reflectionClass->isAbstract()) {
+        continue;
+    } else if ($reflectionClass->getParentClass()->getName() != Command::class || false == $reflectionClass->isInstantiable()) {
+        continue;
+    }
+
+    $app->add($reflectionClass->newInstance());
+}
+
+$app->run();
+
+?>

@@ -1,0 +1,10 @@
+<?php 
+
+// Heading 
+$_['heading_title']                         =       'consolefilename';
+
+
+$_['text_extension']                        =       'Extension';
+$_['text_module']                           =       'Module';
+
+?>
