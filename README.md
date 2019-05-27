@@ -2,7 +2,7 @@
 
 ## Overview
 
-Webkul Opencart Console Application is used to automate the opencart Installation ,Module Creation,Crearing the cache and Add some dummy data via Console commands.
+Webkul Opencart Console Application is used to automate the Opencart Installation, Module Creation, Clearing the cache files and Database Import/Export via Console commands.
 
 ## Getting Started
 
@@ -18,7 +18,7 @@ Before using this app, you must have Opencart installed( Not for the OpenCart in
 
 ## Installing
 
-Please follow the instruction to use this with Opencart plateform.
+Please follow the instruction to use this with Opencart platform.
 
 1 ) Put app and src folder and composer.json file on your installation root
 
@@ -29,7 +29,7 @@ Please follow the instruction to use this with Opencart plateform.
 4) 	After the download is done
 
 ### Opencart Installer
-This console will be used to install the opencart on your system
+This console command is used to install the opencart on your system
 
 ### How to use
 By using this console app you can create Opencart setup for the 2.x.x.x,3.x.x.x versions.
@@ -37,19 +37,19 @@ By using this console app you can create Opencart setup for the 2.x.x.x,3.x.x.x 
     - Syntax:  app/console setup:install-opencart
 - Step2: Enter required options.
     - Syntax: --db_hostname=localhost --db_username=root --db_password=root --db_database=console --db_port=80 --db_prefix=oc_ --username=admin --password=admin --email=johndoe@console.com  --http_server=http://127.0.0.1/opencart-install/ --oc_version=2.3.0.2 --destination=/home/users/webkul/www/html/opencart-install
-- Step3: If all options are valid so required opencart will be downloaded and installed.
-- Step4: You will get your store and admin url with success message
+- Step3: If all the options are valid then required opencart will be download and install.
+- Step4: You will get your store and admin url with success message.
 
 ### Module Genrator
 
-This console command will be used to create skeleton of the basic Module file structure on Admin and Catalog as well.
+This console command is used to create skeleton of the basic Module file structure on Admin and Catalog as well.
 
 ### How to use
- - Step : run command [app/console generate:module] and answer the questions and at last your extension will be ready, which you can see at your admin side and now you can start writing your logic for particular extension
+ - Step : run command [app/console generate:module] and answer the questions and at last your extension will be ready, which you can see at your admin side and now you can start writing your logic for particular extension.
 
 ### Database Import/Export
 
-This console command will be used to export/import sql from/on the Opencart Database.
+This console command is used to export/import sql from/on the Opencart Database.
 
 ### How to use
 
@@ -72,17 +72,17 @@ This console command will be used to export/import sql from/on the Opencart Data
 
  Note : For import table we put the sql file inside the sql_import folder
 
- and export command file will show in sql_export folder
+ and export command file will be in sql_export folder
 
 ### OpenCart Cache Clear
 
- This console command will be used to clear the cache of your project using the command mentioned below.
+ This console command is used to clear the cache of your project using the command mentioned below.
 
 Run the command
    app/console clearcache
 
 ## Deployment
-This project is still under process. there are some commnd need to add.
+This project is still under process. There are some commnd need to add.
 
 
 ## Versioning
@@ -98,4 +98,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](https://st
 
 ## Acknowledgments
 
-* This project has been using symfony bundle to create commonds (https://github.com/symfony/console)
+* This project is using symfony bundle to create commonds (https://github.com/symfony/console)
