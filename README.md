@@ -73,7 +73,7 @@ This console command is used to export/import sql from/on the opencart database.
 
  and export command file will be in sql_export folder
 
-### OpenCart cache clear
+### Opencart cache clear
 
  This console command is used to clear the cache of your project using the command mentioned below.
 
