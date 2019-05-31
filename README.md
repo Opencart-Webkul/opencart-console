@@ -1,16 +1,16 @@
-# Webkul Opencart Console Application
+# Webkul opencart console application
 
 ## Overview
 
-Webkul Opencart Console Application is used to automate the Opencart Installation, Module Creation, Clearing the cache files and Database Import/Export via Console commands.
+Webkul opencart console application is used to automate the opencart installation, module creation, clearing the cache files and database import/export via console commands.
 
-## Getting Started
+## Getting started
 
-Clone this proejct over the directory where your will keep your opencart root setup.
+Clone this proejct over the directory where you will keep your opencart root setup.
 
 ## Prerequisite
 
-Before using this app, you must have Opencart installed( Not for the OpenCart installer console) on your server and composer on your system. If composer is not installed on your system then run the following command-
+Before using this app, you must have opencart installed (not for the opencart installer console) on your server and composer on your system. If composer is not installed on your system then run the following commands-
 - Syntax:  curl -s http://getcomposer.org/installer | php
 - Syntax:  php composer.phar install
 - After successfully installation of composer, you will see "vendor" and "composer.phar" directory and file (PHP Archive).
@@ -18,71 +18,70 @@ Before using this app, you must have Opencart installed( Not for the OpenCart in
 
 ## Installing
 
-Please follow the instruction to use this with Opencart platform.
+Please follow the instruction to use this with opencart platform.
 
-1 ) Put app and src folder and composer.json file on your installation root
+1) Put app and src folder and composer.json file on your installation root
 
-2)	Open your command/terminal and go to your desired installation directory
+2) Open your command/terminal and go to your desired installation directory
 
-3)	To download run command [composer install] and if you have made any changes to in your composer.json file for version then run command [composer update]
+3) To download run command [composer install] and if you have made any changes to in your composer.json file for version then run command [composer update]
 
-4) 	After the download is done
+4) After the composer is installed successfully, now you can use the console commands by following below instruction.
 
 ### Opencart Installer
 This console command is used to install the opencart on your system
 
-### How to use
+#### How to use
 By using this console app you can create Opencart setup for the 2.x.x.x,3.x.x.x versions.
-- Step1: Execute the following command on console
+- Step 1: Execute the following command on console
     - Syntax:  app/console setup:install-opencart
-- Step2: Enter required options.
-    - Syntax: --db_hostname=localhost --db_username=root --db_password=root --db_database=console --db_port=80 --db_prefix=oc_ --username=admin --password=admin --email=johndoe@console.com  --http_server=http://127.0.0.1/opencart-install/ --oc_version=2.3.0.2 --destination=/home/users/webkul/www/html/opencart-install
-- Step3: If all the options are valid then required opencart will be download and install.
-- Step4: You will get your store and admin url with success message.
+- Step 2: Enter required options.
+    - Syntax: --db_hostname=localhost --db_username=root --db_password=root --db_database=console --db_port=80 --db_prefix=oc_ --username=admin --password=admin --email=johndoe@console.com  --http_server=http://127.0.0.1/opencart-install/ --oc_version=2.3.0.2 --destination=/path/of-the-your/opencart-setup
+- Step 3: If all the options are valid then required opencart will be downloaded and installed.
+- Step 4: You will get your store and admin url with success message.
 
-### Module Genrator
+### Module genrator
 
-This console command is used to create skeleton of the basic Module file structure on Admin and Catalog as well.
+This console command is used to create skeleton of the basic module file structure on admin and catalog as well.
+
+#### How to use
+ run command [app/console generate:module] and answer the questions and at last your extension will be ready, which you can see at your admin side and now you can start writing your logic for particular extension.
+
+### Database import/export
+
+This console command is used to export/import sql from/on the opencart database.
 
 ### How to use
- - Step : run command [app/console generate:module] and answer the questions and at last your extension will be ready, which you can see at your admin side and now you can start writing your logic for particular extension.
 
-### Database Import/Export
-
-This console command is used to export/import sql from/on the Opencart Database.
-
-### How to use
-
- ## For Show all List of Opencart Table
+ #### For Show all list of opencart table
 
  command : php app/console app:oc-sql oc_tables
 
- ## Export all table
+ #### Export all table
 
  command  : php app/console app:oc-sql export all
 
- ## Export single table
+ #### Export single table
 
  command  : php app/console app:oc-sql export table_name
 
- ## Import Table
+ #### Import table
 
  command  : php app/console app:oc-sql import table_name
-
 
  Note : For import table we put the sql file inside the sql_import folder
 
  and export command file will be in sql_export folder
 
-### OpenCart Cache Clear
+### OpenCart cache clear
 
  This console command is used to clear the cache of your project using the command mentioned below.
 
-Run the command
-   app/console clearcache
+ Run the command
+   - app/console clearcache
 
 ## Deployment
-This project is still under process. There are some commnd need to add.
+This project is still under process. There are some command need to add.
 
 
 ## Versioning
@@ -94,8 +93,8 @@ This project is still under process. There are some commnd need to add.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://store.webkul.com/license.html) file for details
+This project is licensed under the *Webkul Software Private Limited* License - see the [LICENSE.md](https://store.webkul.com/license.html) file for details
 
 ## Acknowledgments
 
-* This project is using symfony bundle to create commonds (https://github.com/symfony/console)
+* This project is using symfony bundle to create commands (https://github.com/symfony/console)
