@@ -6,7 +6,7 @@ Webkul opencart console application is used to automate the opencart installatio
 
 ## Getting started
 
-Clone this proejct over the directory where you will keep your opencart root setup.
+Clone this project over the directory where you will keep your opencart root setup.
 
 ## Prerequisite
 
