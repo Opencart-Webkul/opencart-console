@@ -1,5 +1,5 @@
 <?php
-namespace OcCommands;
+namespace Generation\Commands;
 /**
  * to download the opencart zip and create the opencart setup
  */
