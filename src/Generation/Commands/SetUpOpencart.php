@@ -188,6 +188,23 @@ class SetUpOpencart extends Command
 
                // To download provided opencart version
               if ($this->downloadOpencartZip()) {
+
+                if (version_compare($input->getOption('oc_version'),'2.3.0.0','>=')) {
+                  $file = $input->getOption('destination') . 'opencart-'.$input->getOption('oc_version') . '/upload/system/startup.php';
+                  if (is_file($file)) {
+                    $contents = file_get_contents($file);
+                    $find = html_entity_decode('if ((isset($_SERVER[&#x27;HTTPS&#x27;]) && (($_SERVER[&#x27;HTTPS&#x27;] == &#x27;on&#x27;) || ($_SERVER[&#x27;HTTPS&#x27;] == &#x27;1&#x27;))) || $_SERVER[&#x27;SERVER_PORT&#x27;] == 443) {',ENT_QUOTES,"UTF-8");
+                    $find1 = html_entity_decode('if (is_file(DIR_STORAGE . &#x27;vendor/autoload.php&#x27;)) {',ENT_QUOTES,"UTF-8");
+
+                    $replace = html_entity_decode('if ((isset($_SERVER[&#x27;HTTPS&#x27;]) && (($_SERVER[&#x27;HTTPS&#x27;] == &#x27;on&#x27;) || ($_SERVER[&#x27;HTTPS&#x27;] == &#x27;1&#x27;))) || (isset($_SERVER[&#x27;SERVER_PORT&#x27;]) && $_SERVER[&#x27;SERVER_PORT&#x27;] == 443)) {',ENT_QUOTES,"UTF-8");
+                    $replace1 = html_entity_decode('if (defined(&#x27;DIR_STORAGE&#x27;) && is_file(DIR_STORAGE . &#x27;vendor/autoload.php&#x27;)) {',ENT_QUOTES,"UTF-8");
+
+                    $contents = str_replace($find,$replace,$contents);
+                    $contents = str_replace($find1,$replace1,$contents);
+                    file_put_contents($file,$contents);
+                  }
+                }
+                
                 $output->writeln([
                     '',
                     '********   ' . $this->data["text_install_step"] . ' ********',
