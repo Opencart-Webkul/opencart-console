@@ -86,16 +86,16 @@ This console command is used to export/import sql from/on the opencart database.
 
 ### How to use
 
- ## for create dummy product
+ #### for create dummy product
  command : php app/console app:dummy-data create-product
 
- ## for create dummy customer
+ #### for create dummy customer
  command  : php app/console app:dummy-data create-customer
 
- ## for create dummy category
+ #### for create dummy category
  command  : php app/console app:dummy-data create-category
 
- ## for create dummy order
+ #### for create dummy order
  command  : php app/console app:dummy-data create-order
 
 ## Deployment
