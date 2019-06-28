@@ -121,15 +121,15 @@ class CreateExtension extends Command {
     private function checkVersion($version) {
         $versions = array(
          '2.0.0.0',
-         '2.0.1.0', 
+         '2.0.1.0',
          '2.0.1.1',
          '2.0.2.0',
          '2.0.3.1',
          '2.1.0.1',
          '2.1.0.2',
-         '2.2.0.0', 
-         '2.3.0.0', 
-         '2.3.0.1', 
+         '2.2.0.0',
+         '2.3.0.0',
+         '2.3.0.1',
          '2.3.0.2',
          '3.0.2.0',
          '3.0.3.1',
@@ -295,7 +295,7 @@ class CreateExtension extends Command {
                 mkdir($cur_path . 'admin/' . $this->dir_admin_view2, 0777, true);
               }
               $view_write = fopen($cur_path . 'admin/' . $this->dir_admin_view2 . $details['file_name'] . ".twig", "w");
-            
+
         } elseif (version_compare($details['version'], '2.3.0.0') >= 0) {
 
             if (!is_dir($cur_path . 'admin/' . $this->dir_admin_view2)) {
@@ -320,12 +320,12 @@ class CreateExtension extends Command {
         $cur_path = getcwd() . '/';
         $view = $this->genViewCatalog($details,$cur_path);
         if (version_compare($details['version'], '3.0.0.0') >= 0) {
-            
+
             if (!is_dir($cur_path . $this->dir_catalog_view2)) {
                 mkdir($cur_path . $this->dir_catalog_view2, 0777, true);
-            }            
+            }
             $view_write = fopen($cur_path . $this->dir_catalog_view2 . $details['file_name'] . ".twig", "w");
-            
+
         } elseif (version_compare($details['version'], '2.3.0.0') >= 0) {
             if (!is_dir($cur_path . $this->dir_catalog_view2)) {
               mkdir($cur_path . $this->dir_catalog_view2, 0777, true);
@@ -393,7 +393,7 @@ class CreateExtension extends Command {
         $cur_path = getcwd() . '/';
         if (version_compare($details['version'], '2.3.0.0') >= 0) {
             if(!file_exists($cur_path . "admin/model/extension/module")) {
-                mkdir($cur_path . "admin/model/extension/module");
+                mkdir($cur_path . "admin/model/extension/module", 0777, true);
             }
             if (!is_dir($cur_path . 'admin/' . $this->dir_admin_model2)) {
               mkdir($cur_path . 'admin/' . $this->dir_admin_model2, 0777, true);
@@ -457,9 +457,9 @@ class CreateExtension extends Command {
         } else {
 
             $file = file_get_contents($cur_path . 'src/Generation/Commands/Resources/extModController.txt', 'w');
-        }        
+        }
 
-        $file = str_replace("consolefilename", $details['file_name'], $file);               
+        $file = str_replace("consolefilename", $details['file_name'], $file);
         $file_content = str_replace("-" . $details['file_name'], ucfirst($this->clearString($details['file_name'])), $file);
 
         return $file_content;
@@ -501,8 +501,8 @@ class CreateExtension extends Command {
             $file_content = str_replace("consolefilename", $details['file_name'], file_get_contents($cur_path . 'src/Generation/Commands/Resources/3.x.x.x/view.txt', 'w'));
         } else {
 
-            $file_content = str_replace("consolefilename", $details['file_name'], file_get_contents($cur_path . 'src/Generation/Commands/Resources/view.txt', 'w'));   
-        }        
+            $file_content = str_replace("consolefilename", $details['file_name'], file_get_contents($cur_path . 'src/Generation/Commands/Resources/view.txt', 'w'));
+        }
         return $file_content;
     }
 
@@ -543,7 +543,7 @@ class CreateExtension extends Command {
     }
 
     private function clearString($string) {
-        
+
        $string = str_replace(' ', ' ', $string);
 
        return preg_replace('/[^A-Za-z0-9\-]/', '', $string);
