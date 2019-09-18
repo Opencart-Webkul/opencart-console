@@ -264,7 +264,6 @@ class SetUpOpencart extends Command
                     file_put_contents($file,$contents);
                   }
                 }
-
                 $output->writeln([
                     '',
                     '********   ' . $this->language["text_install_step"] . ' ********',
