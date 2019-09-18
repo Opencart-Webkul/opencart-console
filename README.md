@@ -35,8 +35,10 @@ This console command is used to install the opencart on your system
 By using this console app you can create Opencart setup for the 2.x.x.x,3.x.x.x versions.
 - Step 1: Execute the following command on console
     - Syntax:  app/console setup:install-opencart
+- Step 2: Required values e.g hostname, username, etc so either you can enter manually or pass with command.
 - Step 2: Enter required options.
-    - Syntax: --db_hostname=localhost --db_username=root --db_password=root --db_database=console --db_port=80 --db_prefix=oc_ --username=admin --password=admin --email=johndoe@console.com  --http_server=http://127.0.0.1/opencart-install/ --oc_version=2.3.0.2 --destination=/path/of-the-your/opencart-setup
+    - Manual Syntax:  --manual=1 You will be asked to enter each values.
+    - Automatic Syntax: --db_hostname=localhost --db_username=root --db_password=root --db_database=console --db_port=80 --db_prefix=oc_ --username=admin --password=admin --email=johndoe@console.com  --http_server=http://127.0.0.1/opencart-install/ --oc_version=2.3.0.2 --destination=/path/of-the-your/opencart-setup
 - Step 3: If all the options are valid then required opencart will be downloaded and installed.
 - Step 4: You will get your store and admin url with success message.
 
