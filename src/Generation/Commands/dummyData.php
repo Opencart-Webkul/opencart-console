@@ -182,6 +182,9 @@ class DummyData extends Command
 
       $query = "INSERT INTO " . DB_PREFIX . "product_description SET product_id = '" . (int)$product_id . "', language_id = '1', name = '" . $this->escape($data['name']) . "', description = '" . $this->escape($data['name']) . "', tag = 'test', meta_title = '" . $this->escape($data['meta_title']) . "', meta_description = '" . $this->escape($data['meta_title']) . "', meta_keyword = '" . $this->escape($data['meta_title']) . "'";
       $result = mysqli_query($conn,$query);
+
+      $query = "INSERT INTO " . DB_PREFIX . "product_to_store SET product_id = '" . (int)$product_id . "', store_id = '0'";
+      $result = mysqli_query($conn,$query);
     }
 
     public function addCategory($data) {
@@ -194,6 +197,9 @@ class DummyData extends Command
       mysqli_query($conn,$query);
 
       $query = "INSERT INTO `" . DB_PREFIX . "category_path` SET `category_id` = '" . (int)$category_id . "', `path_id` = '" . (int)$category_id . "', `level` = '0'";
+      mysqli_query($conn,$query);
+
+      $query = "INSERT INTO `" . DB_PREFIX . "category_to_store` SET `category_id` = '" . (int)$category_id . "', `store_id` = '0'";
       mysqli_query($conn,$query);
     }
 
